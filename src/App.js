@@ -15,8 +15,6 @@ function App() {
 
       const data = await response.json();
 
-      console.log(data);
-
       setPosts(data);
     } catch (error) {
       console.error(error);
@@ -57,7 +55,7 @@ function App() {
       <div className="row">
         {loading && (
           <div className="loader">
-            <i class="p-icon--spinner u-animation--spin"></i>
+            <i className="p-icon--spinner u-animation--spin"></i>
           </div>
         )}
         {!loading &&
@@ -67,7 +65,9 @@ function App() {
               key={post.id}
               className="p-card shadow post-card col-4 col-medium-3"
             >
-              <p className="u-no-margin padding-small">CLOUD AND SERVER</p>
+              <p className="u-no-margin uppercase padding-small">
+                {post._embedded["wp:term"]?.[2]?.[0]?.name}
+              </p>
               <div className="p-card__content card-content padding-small separator-dotted">
                 <div>
                   <img
@@ -85,7 +85,7 @@ function App() {
                     </a>
                   </h4>
                 </div>
-                <div class="author">
+                <div className="author">
                   By{" "}
                   <a
                     href={post._embedded?.author[0]?.link}
@@ -98,7 +98,7 @@ function App() {
                 </div>
               </div>
               <p className="u-no-margin padding-small separator-dotted p-text--small">
-                Article
+                {post._embedded["wp:term"]?.[0]?.[0]?.name}
               </p>
             </div>
           ))}
