@@ -1,0 +1,51 @@
+// Import the framework
+@import "node_modules/vanilla-framework";
+
+// Include all of Vanilla Framework
+@include vanilla;
+
+.page__container {
+  padding: 0.5rem;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.post-card {
+  border-top: 3px solid #a87ca0;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.author {
+  margin-top: auto;
+  font-style: italic;
+}
+
+.padding-small {
+  padding: 0.5rem;
+}
+
+.separator-dotted {
+  border-top: 0.5px dotted $color-mid-light;
+}
+
+.text-small {
+  font-size: 0.8rem;
+}
